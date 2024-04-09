@@ -126,7 +126,7 @@
 
 (define-condition curl-code-error (error)
   (($code :initarg :curl-code :reader curl-error-code))
-  (:report (lambda (c stream ())
+  (:report (lambda (c stream)
              (format stream "libcurl function returned error ~a"
                      (curl-error-code c))))
   (:documentation "Signalled when a libcurl function answers a code othern than CURLE_OK."))
